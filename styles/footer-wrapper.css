@@ -1,0 +1,43 @@
+.footer-wrapper {
+	padding-top: 22px;
+}
+
+.footer-menu__items {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-menu__item-social {
+	display: flex;
+	gap: 15px;
+}
+
+.footer-menu__item-social-icon_twit {
+	background-image: url('../image/twit-icon.png');
+}
+
+.footer-menu__item-social-icon_habr {
+	background-image: url('../image/habr-icon.png');
+}
+
+.footer-menu__item-social-icon_vk {
+	background-image: url('../image/vk-icon.png');
+}
+
+.footer-menu__item-social-icon {
+	background-repeat: no-repeat;
+	align-self: center;
+	min-width: 30px;
+	min-height: 30px;
+}
+
+.footer-menu__rights {
+	font-size: 12px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 130%;
+	color: #212121;
+	text-align: center;
+	margin-bottom: 21px;
+}

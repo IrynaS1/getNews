@@ -1,0 +1,13 @@
+@import url("./global_style.css");
+
+@import url("./styles/page.css");
+
+@import url("./styles/header-wrapper.css");
+
+@import url("./styles/logo.css");
+
+@import url("./styles/title-block.css");
+
+@import url("./styles/news-block.css");
+
+@import url("./styles/footer-wrapper.css");
