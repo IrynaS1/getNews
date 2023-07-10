@@ -6,9 +6,10 @@ const getQuery = () => {
 	if (query !== '') {
 		const openBlock = document.querySelector('.query-block');
 		openBlock.style.display = 'block';
+		return query;
+	} else {
+		console.log('query is empty', query);
 	}
-
-	return query;
 };
 
 export default getQuery;
