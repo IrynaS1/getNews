@@ -1,5 +1,6 @@
 import {
-	dataHeadlines,
+	resultHeadlines,
+	resultQuery,
 } from './getData.js';
 
 const renderNews = (items, block) => {

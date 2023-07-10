@@ -1,15 +1,14 @@
 import {
-	dataHeadlines,
-	getItemsQuery,
-	//dataQuery,
+	resultHeadlines,
+	resultQuery,
 } from './modules/getData.js';
 
 import renderNews from './modules/renderNews.js';
 
 import getQuery from './modules/getQuery.js';
 
-const init = () => {
-	console.log('dataHeadlines', dataHeadlines);
+const init = async () => {
+	const dataHeadlines = await resultHeadlines();
 
 	const headlinesBlock = document.querySelector('.headlines');
 
@@ -21,7 +20,7 @@ const init = () => {
 		const query = getQuery();
 
 		if (query !== '') {
-			const dataQueryLines = getItemsQuery(query);
+			const dataQueryLines = resultQuery(query);
 			console.log('dataQueryLines', dataQueryLines);
 
 			const queryNewsBlock = document.querySelector('.query');
