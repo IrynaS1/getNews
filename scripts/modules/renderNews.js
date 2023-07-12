@@ -1,7 +1,4 @@
-import {
-	resultHeadlines,
-	resultQuery,
-} from './getData.js';
+import data from './getData.js';
 
 const renderNews = (items, block) => {
 	items.forEach(item => {

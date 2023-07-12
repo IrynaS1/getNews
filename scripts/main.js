@@ -1,18 +1,15 @@
-import {
-	resultHeadlines,
-	resultQuery,
-} from './modules/getData.js';
+import data from './modules/getData.js';
 
 import renderNews from './modules/renderNews.js';
 
 import getQuery from './modules/getQuery.js';
 
-const init = async () => {
-	const dataHeadlines = await resultHeadlines();
+const init = () => {
+	const headlinesUrl = 'https://newsapi.org/v2/top-headlines?country=ru';
 
 	const headlinesBlock = document.querySelector('.headlines');
 
-	renderNews(dataHeadlines, headlinesBlock);
+	//data(headlinesUrl, headlinesBlock);
 
 	const btn = document.querySelector('.header-menu__item-input-search_button');
 
@@ -20,14 +17,12 @@ const init = async () => {
 		const query = getQuery();
 
 		if (query !== '') {
-			const dataQueryLines = resultQuery(query);
-			console.log('dataQueryLines', dataQueryLines);
+			const queryUrl = `https://newsapi.org/v2/everything?q=${query}`;
 
 			const queryNewsBlock = document.querySelector('.query');
 
-			renderNews(dataQueryLines, queryNewsBlock);
+			data(queryUrl, queryNewsBlock);
 		}
-		console.log('input done');
 	});
 };
 

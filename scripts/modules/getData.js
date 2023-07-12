@@ -1,55 +1,31 @@
-const getItemsHeadlines = new Promise((resolve, reject) => {
-	resolve(fetch('https://newsapi.org/v2/top-headlines?country=ru', {
-		headers: {
-			'X-API-KEY': '83c261556fdd4508917c884d5643ee95',
-		}
-	}));
-});
+import renderNews from './renderNews.js';
 
-const resultHeadlines = async () => {
-	const result = await getItemsHeadlines;
-
-	const data = result.json();
-
-	const dataArticles = await data;
-
-	const dataArticlesArray = dataArticles.articles;
-
-	const dataHeadlinesArticles = dataArticlesArray.slice(0, 8);
-
-	return dataHeadlinesArticles;
-};
-
-const getItemsQuery = async (query) => {
-	console.log(query);
-	const getData = new Promise((resolve, reject) => {
-		resolve(fetch(`https://newsapi.org/v2/everything?q=${query}`, {
+const data = async (url, block) => {
+	const getItems = new Promise((resolve, reject) => {
+		const data = fetch(url, {
 			headers: {
 				'X-API-KEY': '83c261556fdd4508917c884d5643ee95',
 			}
-		}));
+		});
+		resolve(data);
 	});
+	console.log('getItems ', getItems);
+	const results = async () => {
+		const result = await getItems;
+		console.log('result', result);
+		const dataItems = await result.json();
+		console.log(' dataItems', dataItems);
+		const dataArticles = dataItems.articles;
+		console.log('dataArticle', dataArticles);
+		const articles = dataArticles.slice(0, 8);
+		console.log('articles ', articles);
+		return articles;
+	};
+
+	const articles = await results();
+	console.log('as result articles', articles);
+
+	renderNews(articles, block);
 };
 
-const resultQuery = async () => {
-	const result = await getItemsQuery;
-
-	const data = result.json();
-
-	const dataArticles = await data;
-
-	const dataArticlesArray = dataArticles.articles;
-
-	const dataQueryArticles = dataArticlesArray.slice(0, 8);
-
-	return dataQueryArticles;
-};
-
-//const allItems = Promise.all([getItemsHeadlines, getItemsQuery]);
-//const query = getQuery();
-//const dataQuery = await getItemsQuery(query);
-
-export {
-	resultHeadlines,
-	resultQuery,
-}
+export default data;
