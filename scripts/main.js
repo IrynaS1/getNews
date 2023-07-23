@@ -9,11 +9,13 @@ const init = () => {
 
 	const headlinesBlock = document.querySelector('.headlines');
 
-	//data(headlinesUrl, headlinesBlock);
+	data(headlinesUrl, headlinesBlock);
 
-	const btn = document.querySelector('.header-menu__item-input-search_button');
+	const btn = document.querySelector('.header-menu__search-button');
 
-	btn.addEventListener('click', () => {
+	btn.addEventListener('click', (e) => {
+		e.preventDefault();
+
 		const query = getQuery();
 
 		if (query !== '') {
@@ -22,6 +24,9 @@ const init = () => {
 			const queryNewsBlock = document.querySelector('.query');
 
 			data(queryUrl, queryNewsBlock);
+
+			const title = document.querySelector('.main-title__query');
+			title.textContent = `По вашему запросу “${query}” найдено 8 результатов`;
 		}
 	});
 };

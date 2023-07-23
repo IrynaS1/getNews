@@ -9,21 +9,20 @@ const data = async (url, block) => {
 		});
 		resolve(data);
 	});
-	console.log('getItems ', getItems);
+
 	const results = async () => {
 		const result = await getItems;
-		console.log('result', result);
+
 		const dataItems = await result.json();
-		console.log(' dataItems', dataItems);
+
 		const dataArticles = dataItems.articles;
-		console.log('dataArticle', dataArticles);
+
 		const articles = dataArticles.slice(0, 8);
-		console.log('articles ', articles);
+
 		return articles;
 	};
 
 	const articles = await results();
-	console.log('as result articles', articles);
 
 	renderNews(articles, block);
 };
