@@ -27,7 +27,12 @@ const init = () => {
 
 			const title = document.querySelector('.main-title__query');
 			title.textContent = `По вашему запросу “${query}” найдено 8 результатов`;
+
+			const input = document.querySelector('.header-menu__item-input-search');
+			input.value = '';
 		}
+
+
 	});
 };
 
