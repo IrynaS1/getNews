@@ -1,0 +1,13 @@
+.title-block {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.main-title {
+	font-size: 26px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 130%;
+	color: #212121;
+}

@@ -1,0 +1,140 @@
+.header-wrapper {
+	padding-top: 20px;
+}
+
+.header-menu__items {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.header-menu__item-logo {
+	margin-right: 214px;
+}
+
+.menu-line-style {
+	min-height: 44px;
+	padding-top: 16px;
+	padding-bottom: 17px;
+	padding-left: 20px;
+	border-radius: 22px;
+	border: 1px solid #E6E6E6;
+}
+
+.header-menu__item-search {
+	position: relative;
+}
+
+.header-menu__item-input-search {
+	min-width: 500px;
+	font-size: 14px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 80%;
+	color: #212121;
+	margin-right: 60px;
+}
+
+.header-menu__search-button {
+	background-image: url('../image/search.svg');
+	background-repeat: no-repeat;
+	min-width: 22px;
+	min-height: 22px;
+	position: absolute;
+	top: 15px;
+	right: 90px;
+	border: none;
+}
+
+.header-menu__item-lang {
+	min-width: 320px;
+	padding-right: 20px;
+	font-size: 14px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 80%;
+	color: #212121;
+}
+
+@media(max-width:1300px) {
+	.header-menu__item-logo {
+		margin-right: 100px;
+	}
+
+	.header-menu__item-lang {
+		min-width: 150px;
+	}
+}
+
+@media(max-width:1000px) {
+	.header-menu__item-input-search {
+		min-width: 350px;
+	}
+}
+
+@media(max-width:840px) {
+	.header-menu__item-logo {
+		margin-right: 50px;
+	}
+
+	.header-menu__item-input-search {
+		margin-right: 40px;
+	}
+
+	.header-menu__search-button {
+		right: 60px;
+	}
+}
+
+@media(max-width:780px) {
+	.header-menu__item-input-search {
+		min-width: 250px;
+	}
+}
+
+@media(max-width:660px) {
+	.header-menu__items {
+		flex-wrap: wrap;
+	}
+
+	.header-menu__item-logo {
+		margin-bottom: 20px;
+	}
+
+	.header-menu__item-input-search {
+		min-width: 500px;
+	}
+
+	.header-menu__item-search {
+		margin-bottom: 20px;
+	}
+}
+
+@media(max-width:600px) {
+	.header-menu__item-input-search {
+		min-width: 400px;
+	}
+}
+
+@media(max-width:500px) {
+	.header-menu__item-input-search {
+		min-width: 300px;
+	}
+
+	.footer-menu__items {
+		margin-bottom: 20px;
+	}
+}
+
+@media(max-width:400px) {
+	.header-menu__item-input-search {
+		min-width: 240px;
+	}
+}
+
+@media(max-width:350px) {
+	.header-menu__item-input-search {
+		min-width: 220px;
+	}
+}
